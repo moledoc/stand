@@ -1,38 +1,29 @@
-## stand
+# stand
 
 `stand` is a visual aid program to unobrusively notify you to stand up (and exercise) during workday.
 
-### Dependencies
+## Dependencies
 
-The program is written in python3 and uses tkinter to create a graphical window.
+[raylib](https://github.com/raysan5/raylib) - what an awesome project!!!
 
-* python3
-* tkinter
+I'm using specific version.
+So for example if you clone and `cd` to the root of this project, then
 
-For linux distributions using `apt` package manager
-
-```console
-sudo apt install python3 python3-tk
+```sh
+wget https://github.com/raysan5/raylib/releases/download/5.0/raylib-5.0_linux_amd64.tar.gz
+tar -xvzf ./raylib-5.0_linux_amd64.tar.gz
+rm ./raylib-5.0_linux_amd64.tar.gz
 ```
 
-### How it works
+## Running the program
 
-`stand` is a program that creates a 50x50 window to the top left of the screen,
-that is 50 minutes one color (blackish) and 10 minutes another color (red).
-When the window is red, then it signals that one should be standing up.
-The window is always on top of other windows.
+To compile and run the program
 
-To run `stand`, run the following command in the terminal
-
-```console
-python3 stand.py &
+```sh
+cc -Wall -Wpedantic -o stand stand.c -I./raylib-5.0_linux_amd64/include -L./raylib-5.0_linux_amd64/lib -l:libraylib.a -lm
+./stand
 ```
-
-## TODO:
-
-* update documentations for windows setup
 
 ## Author
 
 Meelis Utt
-
