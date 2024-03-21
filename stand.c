@@ -34,6 +34,7 @@ int main(void) {
 				ClearBackground(RED);
 				SetWindowPosition(0, 0);
 				EndDrawing();
+				sleep(1); // NOTE: to slow down the loop a bit; for faster loop change the sleep to <1s
 			}
 			CloseWindow();
 		}
